@@ -1,7 +1,9 @@
-// This is just an example,
-// so you can safely delete all default props below
-
 export default {
-  failed: 'Action failed',
-  success: 'Action was successful'
+  lorem: 'Lorem',
+  botaoPulante: '',
+  gsap: 'GSAP - Examples',
+  ease: 'Ease',
+  bounceIn: 'Bounce In',
+  bounceOut: 'Bounce Out',
+  bounceInOut: 'Bounce In Out',
 };
