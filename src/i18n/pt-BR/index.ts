@@ -1,7 +1,7 @@
 export default {
   lorem: 'Lorem',
-  botaoPulante: '',
-  gsap: 'GSAP - Examples',
+  botaoPulante: 'Botão pulante',
+  gsap: 'GSAP - Exemplos',
   ease: 'Ease',
   bounceIn: 'Bounce In',
   bounceOut: 'Bounce Out',
