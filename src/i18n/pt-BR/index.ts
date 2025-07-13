@@ -19,4 +19,6 @@ export default {
   power2: 'Power 2',
   power3: 'Power 3',
   power4: 'Power 4',
+  zoom: 'Zoom',
+  fade: 'Fade',
 };

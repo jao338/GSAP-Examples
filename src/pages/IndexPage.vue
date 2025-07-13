@@ -5,10 +5,13 @@
     </div>
     <DefaultCarousel :slides="slides" class="row justify-center items-center col-6">
       <template v-slot:slide-content-0>
-        <DefaultEase class="full-width" />
+        <DefaultZoom class="full-width" />
       </template>
       <template v-slot:slide-content-1>
-        <span>{{ t('lorem') }}</span>
+        <DefaultFade class="full-width" />
+      </template>
+      <template v-slot:slide-content-2>
+        <DefaultFlip class="full-width" />
       </template>
     </DefaultCarousel>
   </PageGeneric>
@@ -17,7 +20,9 @@
 <script setup lang="ts">
 import PageGeneric from 'components/util/PageGeneric.vue';
 import DefaultCarousel from 'components/carousel/DefaultCarousel.vue';
-import DefaultEase from 'components/gsap/DefaultEase.vue';
+import DefaultZoom from 'components/gsap/DefaultZoom.vue';
+import DefaultFade from 'components/gsap/DefaultFade.vue';
+import DefaultFlip from 'components/gsap/DefaultFlip.vue';
 
 import { useI18n } from 'vue-i18n';
 import { ref } from 'vue';
@@ -27,7 +32,8 @@ import { type Slide } from 'components/Interface';
 const { t } = useI18n();
 
 const slides = ref<Slide[]>([
-  { title: t('ease'), duration: 10000 },
-  { title: 'Slide 2', duration: 1000 }
+  { title: t('zoom'), duration: 4000 },
+  { title: t('fade'), duration: 5000 },
+  { title: t('flip'), duration: 5000 },
 ]);
 </script>

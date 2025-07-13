@@ -1,6 +1,6 @@
 <template>
   <q-carousel
-    class="bg-grey-2 border q-pa-md"
+    class="border q-pa-md"
     v-model="currentSlide"
     arrows
     animated
@@ -61,7 +61,7 @@ onBeforeUnmount(() => {
 
 <style>
   .border{
-    border: 1px solid #c9c9c9;
+    border: 1px solid #dedede;
     border-radius: 64px;
   }
 </style>
