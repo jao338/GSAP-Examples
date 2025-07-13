@@ -3,7 +3,8 @@ export type Slide = {
   duration?: number;
 };
 
-export interface BounceElement {
-  type: string;
-  el: HTMLElement;
+export type EasingItem = {
+  key: string
+  ease: string
+  color: string
 }

@@ -1,120 +1,86 @@
 <template>
-  <div class="row q-col-gutter-xl q-mb-xl">
-    <div ref="bounceOut" class="col-4">
-      <q-btn :label="t('bounceOut')" color="red"/>
-    </div>
-    <div ref="bounceIn" class="col-4">
-      <q-btn :label="t('bounceIn')" color="green"/>
-    </div>
-    <div ref="bounceInOut" class="col-4">
-      <q-btn :label="t('bounceInOut')" color="blue" />
-    </div>
-  </div>
-
-  <div class="row q-col-gutter-xl q-mb-xl">
-    <div ref="backOut" class="col-4">
-      <q-btn :label="t('backOut')" color="red"/>
-    </div>
-    <div ref="backIn" class="col-4">
-      <q-btn :label="t('backIn')" color="green"/>
-    </div>
-    <div ref="backInOut" class="col-4">
-      <q-btn :label="t('backInOut')" color="blue" />
+  <div v-for="(group, groupIndex) in groupedEasings" :key="groupIndex" class="row q-col-gutter-xl q-mb-xl">
+    <div
+      v-for="item in group"
+      :key="item.key"
+      :ref="el => easingRefs[item.key] = el as HTMLElement"
+      class="col-4"
+    >
+      <q-btn :label="t(item.key)" :color="item.color" />
     </div>
   </div>
 
   <div class="row q-col-gutter-xl justify-center">
     <div
-      v-for="(item, index) in 4"
-      :key="index"
+      v-for="(ease, index) in powerEases"
+      :key="ease"
       :ref="el => powerRefs[index] = el as HTMLElement"
       class="col-3"
     >
-      <q-btn :label="t(`power${index + 1}`)" color="grey" />
+      <q-btn :label="t(ease)" color="grey" />
     </div>
   </div>
-
 </template>
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { gsap } from 'gsap';
-
-const bounceOut = ref<HTMLElement | null>(null);
-const bounceIn = ref<HTMLElement | null>(null);
-const bounceInOut = ref<HTMLElement | null>(null);
-const backOut = ref<HTMLElement | null>(null);
-const backIn = ref<HTMLElement | null>(null);
-const backInOut = ref<HTMLElement | null>(null);
-
-const powerRefs = ref<HTMLElement[]>([]);
+import { type EasingItem } from 'components/Interface';
 
 const { t } = useI18n();
 
+const groupedEasings: EasingItem[][] = [
+  [
+    { key: 'bounceOut', ease: 'bounce.out', color: 'red' },
+    { key: 'bounceIn', ease: 'bounce.in', color: 'green' },
+    { key: 'bounceInOut', ease: 'bounce.inOut', color: 'blue' }
+  ],
+  [
+    { key: 'backOut', ease: 'back.out', color: 'red' },
+    { key: 'backIn', ease: 'back.in', color: 'green' },
+    { key: 'backInOut', ease: 'back.inOut', color: 'blue' }
+  ],
+  [
+    { key: 'elasticOut', ease: 'elastic.out', color: 'red' },
+    { key: 'elasticIn', ease: 'elastic.in', color: 'green' },
+    { key: 'elasticInOut', ease: 'elastic.inOut', color: 'blue' }
+  ],
+  [
+    { key: 'expoOut', ease: 'expo.out', color: 'red' },
+    { key: 'expoIn', ease: 'expo.in', color: 'green' },
+    { key: 'expoInOut', ease: 'expo.inOut', color: 'blue' }
+  ]
+]
+
+const easingRefs = ref<Record<string, HTMLElement | null>>({})
+const powerRefs = ref<HTMLElement[]>([])
+
+const powerEases = ['power1', 'power2', 'power3', 'power4']
+
 onMounted(() => {
-  if (bounceOut.value) {
-    gsap.from(bounceOut.value, {
-      opacity: 0,
-      y: -50,
-      duration: 4,
-      ease: 'bounce.out'
-    });
-  }
+  groupedEasings.flat().forEach(({ key, ease }) => {
+    const el = easingRefs.value[key]
+    if (el) {
+      gsap.from(el, {
+        opacity: 0,
+        y: -50,
+        duration: 4,
+        ease
+      })
+    }
+  })
 
-  if (bounceIn.value) {
-    gsap.from(bounceIn.value, {
-      opacity: 0,
-      y: -50,
-      duration: 4,
-      ease: 'bounce.in'
-    });
-  }
-
-  if (bounceInOut.value) {
-    gsap.from(bounceInOut.value, {
-      opacity: 0,
-      y: -50,
-      duration: 4,
-      ease: 'bounce.inOut'
-    });
-  }
-  if (backOut.value) {
-    gsap.from(backOut.value, {
-      opacity: 0,
-      y: -50,
-      duration: 4,
-      ease: 'back.out'
-    });
-  }
-
-  if (backIn.value) {
-    gsap.from(backIn.value, {
-      opacity: 0,
-      y: -50,
-      duration: 4,
-      ease: 'back.in'
-    });
-  }
-
-  if (backInOut.value) {
-    gsap.from(backInOut.value, {
-      opacity: 0,
-      y: -50,
-      duration: 4,
-      ease: 'back.inOut'
-    });
-  }
-
+  // Anima power easings
   powerRefs.value.forEach((el, index) => {
     if (el) {
       gsap.from(el, {
         opacity: 0,
         y: -150,
         duration: 1,
-        ease: `power${index + 1}.out`
-      });
+        ease: `${powerEases[index]}.out`
+      })
     }
-  });
-});
+  })
+})
 </script>
