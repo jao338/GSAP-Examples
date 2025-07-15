@@ -40,10 +40,10 @@ import { type Slide } from 'components/Interface';
 const { t } = useI18n();
 
 const slides = ref<Slide[]>([
-  { title: t('zoom'), duration: 100 },
-  { title: t('fade'), duration: 100 },
-  { title: t('flip'), duration: 100 },
-  { title: t('pulse'), duration: 100 },
+  { title: t('zoom'), duration: 4000 },
+  { title: t('fade'), duration: 5000 },
+  { title: t('flip'), duration: 1000 },
+  { title: t('pulse'), duration: 1000 },
   { title: t('shake'), duration: 10000 },
 ]);
 </script>

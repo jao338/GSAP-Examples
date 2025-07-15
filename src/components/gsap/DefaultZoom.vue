@@ -22,10 +22,16 @@ const zoomIn = ref<HTMLElement | null>(null);
 
 onMounted(() => {
   if (zoomOut.value) {
-    animate(zoomOut.value, 'zoomOut');
+    animate(zoomOut.value, 'zoomOut', {
+      fromVars: { opacity: 0.5, scale: 1 },
+      toVars: { opacity: 1, scale: 2, duration: 1.2 }
+    }, 'fromTo');
   }
   if (zoomIn.value) {
-    animate(zoomIn.value, 'zoomIn');
+    animate(zoomIn.value, 'zoomOut', {
+      fromVars: { opacity: 1, scale: 1 },
+      toVars: { opacity: 0.5, scale: 1, duration: 1.2 }
+    }, 'fromTo');
   }
 })
 </script>
