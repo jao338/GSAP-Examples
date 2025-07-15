@@ -14,8 +14,10 @@ export const useAnimations = () => {
       zoomOut:      { opacity: 0, scale: 0, duration: 2.0, ease: 'back.in' },
       zoomIn:       { opacity: 0, scale: 0.5, duration: 2.0, ease: 'back.out' },
       flipInX:      { opacity: 0, rotationX: -90, duration: 2.0, ease: 'back.out' },
-      pulse:        { scale: 1.1, duration: 0.3, repeat: 1, yoyo: true, ease: 'power1.inOut' },
-      shakeX:       { x: '-=10', duration: 0.1, repeat: 5, yoyo: true, ease: 'power1.inOut' },
+      pulse:        { scale: 1.1, duration: 2, repeat: 1, yoyo: true, ease: 'power1.inOut' },
+      shakeX:       { x: '-=10', duration: 1, repeat: 5, yoyo: true, ease: 'power1.inOut' },
+      shakeY:       { y: '-=10', duration: 1, repeat: 5, yoyo: true, ease: 'power1.inOut' },
+      shake:       { duration: 2, repeat: 5, yoyo: true, rotateX: 0, rotateY: 0, rotate: -45, ease: 'power1.inOut' },
     }
 
     const config = presets[preset]

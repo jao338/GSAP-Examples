@@ -13,6 +13,12 @@
       <template v-slot:slide-content-2>
         <DefaultFlip class="full-width" />
       </template>
+      <template v-slot:slide-content-3>
+        <DefaultPulse class="full-width" />
+      </template>
+      <template v-slot:slide-content-4>
+        <DefaultShake class="full-width" />
+      </template>
     </DefaultCarousel>
   </PageGeneric>
 </template>
@@ -23,6 +29,8 @@ import DefaultCarousel from 'components/carousel/DefaultCarousel.vue';
 import DefaultZoom from 'components/gsap/DefaultZoom.vue';
 import DefaultFade from 'components/gsap/DefaultFade.vue';
 import DefaultFlip from 'components/gsap/DefaultFlip.vue';
+import DefaultPulse from 'components/gsap/DefaultPulse.vue';
+import DefaultShake from 'components/gsap/DefaultShake.vue';
 
 import { useI18n } from 'vue-i18n';
 import { ref } from 'vue';
@@ -32,8 +40,10 @@ import { type Slide } from 'components/Interface';
 const { t } = useI18n();
 
 const slides = ref<Slide[]>([
-  { title: t('zoom'), duration: 4000 },
-  { title: t('fade'), duration: 5000 },
-  { title: t('flip'), duration: 5000 },
+  { title: t('zoom'), duration: 100 },
+  { title: t('fade'), duration: 100 },
+  { title: t('flip'), duration: 100 },
+  { title: t('pulse'), duration: 100 },
+  { title: t('shake'), duration: 10000 },
 ]);
 </script>
