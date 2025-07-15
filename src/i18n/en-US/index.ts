@@ -23,6 +23,7 @@ export default {
   zoomIn: 'Zoom In',
   zoomOut: 'Zoom Out',
   fade: 'Fade',
+  fadeInfo: 'The text performs an elastic entrance animation from the left, starting invisible, rotated, and in a light purple color. Over 10 seconds, it moves to the center, scales up to 3x, rotates into place, changes to deep purple, and becomes fully visible with a smooth elastic effect.',
   fadeIn: 'Fade In',
   fadeOut: 'Fade Out',
   fadeInOut: 'Fade In Out',

@@ -23,6 +23,7 @@ export default {
   zoomIn: 'Zoom in',
   zoomOut: 'Zoom Out',
   fade: 'Fade',
+  fadeInfo: 'O texto realiza uma animação com entrada elástica partindo da esquerda, começando invisível, rotacionado e com uma cor lilás clara. Durante 10 segundos, ele se move para o centro, aumenta até 3x o tamanho, gira até alinhar, muda para roxo intenso e se torna totalmente visível com um efeito suave de elástico',
   fadeIn: 'Fade In',
   fadeOut: 'Fade Out',
   fadeInOut: 'Fade In Out',

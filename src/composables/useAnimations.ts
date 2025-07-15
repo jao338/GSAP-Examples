@@ -1,13 +1,13 @@
-import { gsap } from 'gsap'
+import { gsap } from 'gsap';
 
 type GsapTarget = gsap.TweenTarget
 const presets = {
   fadeIn:     { opacity: 0, y: 30, duration: 2.0, ease: 'power2.in' },
   fadeOut:    { opacity: 0, duration: 2.0, ease: 'power2.in' },
-  fadeInUp:   { opacity: 0, y: 30, duration: 2.0, ease: 'power2.out' },
-  fadeInDown: { opacity: 0, y: -30, duration: 2.0, ease: 'power2.out' },
-  fadeInLeft: { opacity: 0, x: -30, duration: 2.0, ease: 'power2.out' },
-  fadeInRight:{ opacity: 0, x: 30, duration: 2.0, ease: 'power2.out' },
+  fadeInUp:   { opacity: 0, y: 15, duration: 2.0, ease: 'power2.out' },
+  fadeInDown: { opacity: 0, y: -15, duration: 2.0, ease: 'power2.out' },
+  fadeInLeft: { opacity: 0, x: -15, duration: 2.0, ease: 'power2.out' },
+  fadeInRight:{ opacity: 0, x: 15, duration: 2.0, ease: 'power2.out' },
   zoomOut:    { opacity: 0, scale: 0, duration: 2.0, ease: 'back.in' },
   zoomIn:     { opacity: 0, scale: 0.5, duration: 2.0, ease: 'back.out' },
   flipInX:    { opacity: 0, rotationX: -90, duration: 2.0, ease: 'back.out' },

@@ -8,7 +8,7 @@
     height="75vh"
   >
     <q-carousel-slide v-for="(slide, index) in slides" :key="index" :name="String(index)" class="row column items-center justify-between">
-      <div class="text-h4 col-4">{{ slide.title }}</div>
+      <router-link class="text-h5 col-4 text-black" style="text-decoration: none" :to="slide.path.name">{{ slide.title }}</router-link>
       <div class="col-8">
         <slot :name="`slide-content-${index}`" />
       </div>
