@@ -1,8 +1,8 @@
 <template>
   <PageGeneric class="row items-center justify-center q-px-xl">
-    <div class="col-1 text-h3 text-center" ref="fade">{{ t('fade') }}</div>
+    <div class="col-1 text-h3 text-center" ref="flip">{{ t('flip') }}</div>
     <div class="col-12 row justify-center items-center">
-      <div class="col-6 text-h6 text-center">{{ t('fadeInfo') }}</div>
+      <div class="col-6 text-h6 text-center">{{ t('flipInfo') }}</div>
     </div>
   </PageGeneric>
 </template>
@@ -18,18 +18,18 @@ const { animate } = useAnimations();
 
 const { t } = useI18n();
 
-const fade = ref<HTMLElement | null>(null);
+const flip = ref<HTMLElement | null>(null);
 
 onMounted(() => {
-  if(fade.value){
-    animate(fade.value, 'fadeInDown', {
-      fromVars: {
-        opacity: 0, scale: 1, x: -100, rotate: -35, color: '#aa82e3'
-      },
-      toVars: {
-        opacity: 1, scale: 3, x: 0, ease: 'elastic.out', duration: 10, rotate: 0, color: '#9C27B0'
-      }
-    }, 'fromTo')
+  if (flip.value) {
+    animate(flip.value, null, {
+      steps: [
+        { rotationX: 0, opacity: 0.2, duration: 1, scale: .5 },
+        { rotationX: 180, scale: 1, color: '#ffb300', duration: 1.5 },
+        { rotationX: -360, scale: 2, color: '#2747b0', duration: 2 }
+      ]
+    })
   }
 })
+
 </script>

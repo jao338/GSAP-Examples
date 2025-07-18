@@ -10,8 +10,9 @@ const presets = {
   fadeInRight:{ opacity: 0, x: 15, duration: 2.0, ease: 'power2.out' },
   zoomOut:    { opacity: 0, scale: 0, duration: 2.0, ease: 'back.in' },
   zoomIn:     { opacity: 0, scale: 0.5, duration: 2.0, ease: 'back.out' },
-  flipInX:    { opacity: 0, rotationX: -90, duration: 2.0, ease: 'back.out' },
-  pulse:      { scale: 1.1, duration: 2, repeat: 1, yoyo: true, ease: 'power1.inOut' },
+  flipInX:    { opacity: 0, rotationX: -90, duration: 4.0, ease: 'back.out' },
+  flip:       { opacity: 0,  ease: 'back.out' },
+  pulse:      { scale: 1.3, duration: 2, repeat: 1, yoyo: true, ease: 'power1.inOut' },
   shakeX:     { x: '-=10', duration: 1, repeat: 5, yoyo: true, ease: 'power1.inOut' },
   shakeY:     { y: '-=10', duration: 1, repeat: 5, yoyo: true, ease: 'power1.inOut' },
   shake:      { duration: 2, repeat: 5, yoyo: true, rotateX: 0, rotateY: 0, rotate: -45, ease: 'power1.inOut' },
@@ -23,15 +24,19 @@ type AnimationMode = 'from' | 'to' | 'fromTo'
 export const useAnimations = () => {
   const animate = (
     target: GsapTarget,
-    preset: AnimationPreset,
-    options: Partial<gsap.TweenVars> = {},
+    preset: AnimationPreset | null = null,
+    options: Partial<gsap.TweenVars> | { steps: gsap.TweenVars[] } = {},
     mode: AnimationMode = 'from'
   ) => {
-    const config = presets[preset]
-    if (!config) {
-      console.warn(`Preset '${preset}' not found.`)
-      return
+    if ('steps' in options && Array.isArray(options.steps)) {
+      const tl = gsap.timeline()
+      for (const step of options.steps) {
+        tl.to(target, step)
+      }
+      return tl
     }
+
+    const config = preset ? presets[preset] : {}
 
     if (mode === 'fromTo') {
       const { fromVars, toVars } = options as {
@@ -40,15 +45,16 @@ export const useAnimations = () => {
       }
 
       if (!fromVars || !toVars) {
-        console.warn(`'fromTo' mode requires both 'fromVars' and 'toVars' inside 'options'.`)
+        console.warn(`'fromTo' mode requires both 'fromVars' and 'toVars'`)
         return
       }
 
       return gsap.fromTo(target, fromVars, toVars)
     }
 
-    return gsap[mode](target, { ...config, ...options })
+    return gsap[mode](target, { ...config, ...(options as gsap.TweenVars) })
   }
 
   return { animate }
 }
+

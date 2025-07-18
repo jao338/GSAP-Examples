@@ -1,5 +1,5 @@
 <template>
-  <div class="row q-col-gutter-xl q-mb-xl">
+  <div class="row q-col-gutter-xl q-mb-xl no-overflow">
     <div ref="pulse" class="flex justify-center items-center q-pa-xl text-white col-12">
       <q-btn :label="t('pulse')" color="blue" />
     </div>

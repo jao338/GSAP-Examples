@@ -1,7 +1,7 @@
 <template>
   <PageGeneric class="row items-center justify-center q-px-xl">
     <div class="col-12 text-center">
-      <span class="text-h5">{{ t('gsap') }}</span>
+      <span class="text-h3">{{ t('gsap') }}</span>
     </div>
     <DefaultCarousel :slides="slides" class="row justify-center items-center col-12">
       <template v-slot:slide-content-0>
@@ -44,13 +44,12 @@ const slides = ref<Slide[]>([
   { title: t('fade'), duration: 5000, path: { name: 'fade', path: 'fade' } },
   { title: t('flip'), duration: 3000, path: { name: 'flip', path: 'flip' } },
   { title: t('pulse'), duration: 4000, path: { name: 'pulse', path: 'pulse' } },
-  { title: t('shake'), duration: 3000, path: { name: 'shake', path: 'shake' } },
+  { title: t('shake'), duration: 3000, path: { name: 'shake', path: 'shake' } }
 ]);
 </script>
 
 <style>
-.no-overflow{
-  overflow-x: hidden !important;
-  overflow-y: hidden !important;
+.no-overflow {
+  overflow: hidden !important;
 }
 </style>

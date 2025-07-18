@@ -1,6 +1,6 @@
 <template>
   <q-carousel
-    class="border q-pa-md"
+    class="q-pa-md"
     v-model="currentSlide"
     arrows
     animated
@@ -8,7 +8,7 @@
     height="75vh"
   >
     <q-carousel-slide v-for="(slide, index) in slides" :key="index" :name="String(index)" class="row column items-center justify-between">
-      <router-link class="text-h5 col-4 text-black" style="text-decoration: none" :to="slide.path.name">{{ slide.title }}</router-link>
+      <router-link class="text-h4 col-4 text-blue" style="text-decoration: none" :to="slide.path.name">{{ slide.title }}</router-link>
       <div class="col-8">
         <slot :name="`slide-content-${index}`" />
       </div>
@@ -19,6 +19,12 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { type Slide } from 'src/components/Interface';
+
+
+
+//  CRIAR BOTÃO FLUTUANTE QUE TROCA O IDIOMA DA APLICAÇÃO, DEVE SER O MAIS AMIGÁVEL POSSÍVEL
+
+
 
 const defaultDuration = ref<number>(5000);
 const currentSlide = ref('0');
@@ -58,10 +64,3 @@ onBeforeUnmount(() => {
   clearTimeout(timer!);
 });
 </script>
-
-<style>
-  .border{
-    border: 1px solid #dedede;
-    border-radius: 64px;
-  }
-</style>
