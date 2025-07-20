@@ -35,9 +35,12 @@ export default {
   flip: 'Flip',
   flipInfo: 'Esta animação cria um efeito de giro 3D horizontal em um elemento de texto utilizando GSAP com Vue 3. O efeito simula uma rotação no eixo X (rotationX), combinando transformações de escala, opacidade e cor. A animação inicia com o elemento pequeno e esmaecido (opacity: 0.2, scale: 0.5), realiza um giro de 180 graus aumentando a escala, e finaliza com uma rotação total de 360 graus e alteração final de cor. Cada etapa é encadeada usando gsap.timeline, garantindo transições suaves e em sequência.',
   flipInX: 'Flip in X',
+  flipInY: 'Flip in Y',
+  flipInZ: 'Flip in Z',
   pulse: 'Pulse',
   pulseInfo: 'Esta animação cria um efeito sutil de pulsação em um elemento utilizando o GSAP em um ambiente Vue 3 com script setup. A animação ajusta gradualmente os valores de opacidade, escala e rotação do elemento por meio de oito etapas suaves (keyframes). Essas etapas são encadeadas em uma timeline do GSAP e repetidas quatro vezes para simular uma pulsação rítmica e natural. A função de easing (sine.inOut) garante transições suaves e orgânicas, com a animação sempre finalizando em um estado neutro: scale: 1, rotate: 0 e opacity: 1.',
   shake: 'Shake',
+  shakeInfo: 'Essa animação simula um efeito de "chacoalhar" 3D dramático, aplicando rotações rápidas e pequenas nos três eixos — rotationX, rotationY e rotationZ. Cada etapa traz um movimento angular exagerado, suavizado com sine.inOut, que dá fluidez ao efeito. Um leve scale aumenta a sensação de impacto visual. Ao final, o elemento retorna ao seu estado original com suavidade.',
   shakeX: 'Shake X',
   shakeY: 'Shake Y',
 };

@@ -24,14 +24,14 @@ onMounted(() => {
   if (pulse.value) {
     animate(pulse.value, null, {
       steps: [
-        { opacity: 0.2, scale: 0.5, rotate: -4, duration: 0.3, ease: 'sine.inOut' },
-        { opacity: 0.4, scale: 0.75, rotate: 4, duration: 0.3, ease: 'sine.inOut' },
-        { opacity: 0.6, scale: 0.9, rotate: -2, duration: 0.3, ease: 'sine.inOut' },
-        { opacity: 0.8, scale: 1.1, rotate: 2, duration: 0.3, ease: 'sine.inOut' },
-        { opacity: 0.9, scale: 0.95, rotate: -1, duration: 0.3, ease: 'sine.inOut' },
-        { opacity: 1, scale: 1.05, rotate: 1, duration: 0.3, ease: 'sine.inOut' },
-        { opacity: 1, scale: 1.02, rotate: 0.5, duration: 0.3, ease: 'sine.inOut' },
-        { opacity: 1, scale: 1, rotate: 0, duration: 0.5, ease: 'sine.out' }
+        { color: 'red', opacity: 0.2, scale: 0.5, rotate: -4, duration: 0.3, ease: 'sine.inOut' },
+        { color: 'red', opacity: 0.4, scale: 0.75, rotate: 4, duration: 0.3, ease: 'sine.inOut' },
+        { color: 'red', opacity: 0.6, scale: 0.9, rotate: -2, duration: 0.3, ease: 'sine.inOut' },
+        { color: 'red', opacity: 0.8, scale: 1.1, rotate: 2, duration: 0.3, ease: 'sine.inOut' },
+        { color: 'red', opacity: 0.9, scale: 0.95, rotate: -1, duration: 0.3, ease: 'sine.inOut' },
+        { color: 'red', opacity: 1, scale: 1.05, rotate: 1, duration: 0.3, ease: 'sine.inOut' },
+        { color: 'red', opacity: 1, scale: 1.02, rotate: 0.5, duration: 0.3, ease: 'sine.inOut' },
+        { color: 'red', opacity: 1, scale: 1, rotate: 0, duration: 0.5, ease: 'sine.out' }
       ],
       repeat: 4
     })

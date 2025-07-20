@@ -35,9 +35,12 @@ export default {
   flip: 'Flip',
   flipInfo: 'This animation produces a flip rotation effect on a text element using GSAP and Vue 3. The effect simulates a 3D horizontal flip (rotationX) combined with scaling, opacity changes, and color transitions. It starts with a faded, small version of the element (opacity: 0.2, scale: 0.5), flips it 180 degrees while scaling up, and completes the cycle with a full 360-degree flip and a final color change. Each step is chained via gsap.timeline, ensuring smooth sequential transitions.',
   flipInX: 'Flip in X',
+  flipInY: 'Flip in Y',
+  flipInZ: 'Flip in Z',
   pulse: 'Pulse',
   pulseInfo: 'This animation creates a subtle pulse effect on an element using GSAP in a Vue 3 (script setup) environment. The animation gradually adjusts the element\'s opacity, scale, and rotation through a sequence of eight smooth keyframes. These steps are chained inside a GSAP timeline and repeated four times to simulate a natural rhythmic pulse. The easing used (sine.inOut) ensures the transitions are smooth and organic, with the animation always ending in a neutral state: scale: 1, rotate: 0, and opacity: 1.',
   shake: 'Shake',
+  shakeInfo: 'This animation simulates a dramatic 3D shake effect by applying small, rapid rotations on all three axes — rotationX, rotationY, and rotationZ. Each step introduces exaggerated angular movement, which is softened by a sinusoidal easing (sine.inOut). Additionally, a slight scale up reinforces the feeling of intensity. The sequence ends gracefully with the element returning to its original state.',
   shakeX: 'Shake X',
   shakeY: 'Shake Y',
 };

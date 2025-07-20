@@ -24,13 +24,17 @@ onMounted(() => {
   if (shake.value) {
     animate(shake.value, null, {
       steps: [
-        { opacity: 1, duration: 1, ease: 'power1.inOut', rotateX: 0, rotateY: 0, rotateZ: 0, rotate: 0 },
-        { opacity: 1, duration: 1, ease: 'power1.inOut', rotateX: -15, rotateY: 0, rotateZ: 0, rotate: -15 },
-        { opacity: 1, duration: 1, ease: 'power1.inOut', rotateX: 15, rotateY: 0, rotateZ: 0, rotate: 15 },
+        { color: 'green', scale: 1.05, rotationX: 10, rotationY: -10, rotationZ: 5, duration: 0.15, ease: 'sine.inOut' },
+        { color: 'green', scale: 1.1, rotationX: -15, rotationY: 15, rotationZ: -5, duration: 0.15, ease: 'sine.inOut' },
+        { color: 'green', scale: 1.08, rotationX: 20, rotationY: -20, rotationZ: 10, duration: 0.15, ease: 'sine.inOut' },
+        { color: 'green', scale: 1.05, rotationX: -10, rotationY: 10, rotationZ: -10, duration: 0.15, ease: 'sine.inOut' },
+        { color: 'green', scale: 1.1, rotationX: 5, rotationY: -5, rotationZ: 5, duration: 0.15, ease: 'sine.inOut' },
+        { color: 'green', scale: 1.03, rotationX: -5, rotationY: 5, rotationZ: -5, duration: 0.15, ease: 'sine.inOut' },
+        { color: 'green', scale: 1, rotationX: 0, rotationY: 0, rotationZ: 0, duration: 0.25, ease: 'sine.out' }
       ],
       repeat: 4
-    })
+    });
   }
-})
+});
 
 </script>

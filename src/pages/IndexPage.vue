@@ -41,8 +41,8 @@ const { t } = useI18n();
 
 const slides = ref<Slide[]>([
   { title: t('zoom'), duration: 3000, path: { name: 'zoom', path: 'zoom' } },
-  { title: t('fade'), duration: 5000, path: { name: 'fade', path: 'fade' } },
-  { title: t('flip'), duration: 3000, path: { name: 'flip', path: 'flip' } },
+  { title: t('fade'), duration: 4000, path: { name: 'fade', path: 'fade' } },
+  { title: t('flip'), duration: 5000, path: { name: 'flip', path: 'flip' } },
   { title: t('pulse'), duration: 4000, path: { name: 'pulse', path: 'pulse' } },
   { title: t('shake'), duration: 3000, path: { name: 'shake', path: 'shake' } }
 ]);

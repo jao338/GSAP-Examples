@@ -24,10 +24,13 @@ onMounted(() => {
   if (flip.value) {
     animate(flip.value, null, {
       steps: [
-        { rotationX: 0, opacity: 0.2, duration: 1, scale: .5 },
-        { rotationX: 180, scale: 1, color: '#ffb300', duration: 1.5 },
-        { rotationX: -360, scale: 2, color: '#2747b0', duration: 2 }
-      ]
+        { rotationX: 0, opacity: 0.2, color: '#2747b0', duration: 1, scale: .5, ease: 'sine.in' },
+        { rotationX: 180, scale: 1, color: '#ffb300', duration: 1.5, ease: 'sine.in' },
+        { rotationX: -360, scale: 2, color: '#2747b0', duration: 2, ease: 'sine.in' },
+        { rotationX: 180, scale: 1, color: '#ffb300', duration: 1.5, ease: 'sine.in' },
+        { rotationX: 0, opacity: 0.2, color: '#2747b0', duration: 1, scale: .5, ease: 'sine.in' },
+      ],
+      repeat: 3
     })
   }
 })
