@@ -1,9 +1,9 @@
 <template>
   <PageGeneric class="row items-center justify-center q-px-xl">
     <div class="col-12 text-center">
-      <span class="text-h5">{{ t('gsap') }}</span>
+      <span class="text-h3">{{ t('gsap') }}</span>
     </div>
-    <DefaultCarousel :slides="slides" class="row justify-center items-center col-12">
+    <DefaultCarousel :slides="slides" class="row justify-center items-center col-6 bg-blue-1 border-radius">
       <template v-slot:slide-content-0>
         <DefaultZoom class="full-width" />
       </template>
@@ -41,16 +41,9 @@ const { t } = useI18n();
 
 const slides = ref<Slide[]>([
   { title: t('zoom'), duration: 3000, path: { name: 'zoom', path: 'zoom' } },
-  { title: t('fade'), duration: 5000, path: { name: 'fade', path: 'fade' } },
-  { title: t('flip'), duration: 3000, path: { name: 'flip', path: 'flip' } },
+  { title: t('fade'), duration: 4000, path: { name: 'fade', path: 'fade' } },
+  { title: t('flip'), duration: 5000, path: { name: 'flip', path: 'flip' } },
   { title: t('pulse'), duration: 4000, path: { name: 'pulse', path: 'pulse' } },
-  { title: t('shake'), duration: 3000, path: { name: 'shake', path: 'shake' } },
+  { title: t('shake'), duration: 3000, path: { name: 'shake', path: 'shake' } }
 ]);
 </script>
-
-<style>
-.no-overflow{
-  overflow-x: hidden !important;
-  overflow-y: hidden !important;
-}
-</style>
