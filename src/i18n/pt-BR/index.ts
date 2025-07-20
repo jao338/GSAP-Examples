@@ -1,6 +1,11 @@
 export default {
   lorem: 'Lorem',
+  mudarModo: 'Modo de cor',
+  darkMode: 'Modo dark',
+  whiteMode: 'Modo white',
   botaoPulante: 'Botão pulante',
+  mudarLinguagem: 'Mudar linguagem',
+  acoes: 'Ações',
   gsap: 'GSAP - Exemplos',
   ease: 'Ease',
   bounceIn: 'Bounce In',

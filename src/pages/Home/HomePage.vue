@@ -3,7 +3,7 @@
     <div class="col-12 text-center">
       <span class="text-h3">{{ t('gsap') }}</span>
     </div>
-    <DefaultCarousel :slides="slides" class="row justify-center items-center col-12">
+    <DefaultCarousel :slides="slides" class="row justify-center items-center col-6 bg-blue-1 border-radius">
       <template v-slot:slide-content-0>
         <DefaultZoom class="full-width" />
       </template>
@@ -47,9 +47,3 @@ const slides = ref<Slide[]>([
   { title: t('shake'), duration: 3000, path: { name: 'shake', path: 'shake' } }
 ]);
 </script>
-
-<style>
-.no-overflow {
-  overflow: hidden !important;
-}
-</style>
